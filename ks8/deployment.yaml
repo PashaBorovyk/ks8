@@ -17,10 +17,10 @@ spec:
       - name: spring-app
         image: docker.io/pborovyk/myrepo:latest
         ports:
-        - containerPort: 8083
+        - containerPort: 8085
         env:
         - name: SERVER_PORT
-          value: "8083"
+          value: "8085"
 ---
 apiVersion: v1
 kind: Service
@@ -33,5 +33,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8083
+      targetPort: 8085
   type: NodePort
